@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Notes</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/gh/starfederation/datastar@v1.0.2/bundles/datastar.js"
+    ></script>
+  </head>
+
+  <body data-signals="{ message: 'Hello World!', title: '', body: '' }">
+    <h1>Notes</h1>
+    <form>
+      <div class="form-control">
+        <label for="title">Title</label>
+        <input type="text" data-bind="title" placeholder="Title" id="title" />
+      </div>
+      <div class="form-control">
+        <label for="body">Body</label
+        ><textarea data-bind="body" placeholder="Body" id="body"></textarea>
+      </div>
+      <button data-on:click="@post('/notes')" type="button">
+        Add Note
+      </button>
+    </form>
+
+    <ul id="notes"></ul>
+  </body>
+</html>
