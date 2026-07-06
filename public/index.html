@@ -22,9 +22,15 @@
         <label for="body">Body</label
         ><textarea data-bind="body" placeholder="Body" id="body"></textarea>
       </div>
-      <button data-on:click="@post('/notes')" type="button">
+      <button
+        type="button"
+        data-on:click="@post('/notes')"
+        data-indicator="addingNote"
+        data-attr:disabled="$addingNote"
+      >
         Add Note
       </button>
+      <span data-show="$addingNote">Saving...</span>
     </form>
 
     <ul id="notes"></ul>
