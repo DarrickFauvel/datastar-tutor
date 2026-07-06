@@ -16,22 +16,53 @@
   }
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1 {
   color: var(--color-accent);
 }
 
+h2 {
+  margin-top: 0;
+}
+
 form {
   display: flex;
   flex-direction: column;
   gap: 1em;
+  margin-bottom: 2em;
+}
+
+input,
+textarea,
+button {
+  font-size: inherit;
 }
 
 .form-control {
   display: flex;
   flex-direction: column;
+}
+
+#notes {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  & li {
+    list-style-type: none;
+    background-color: var(--color-surface);
+    padding: 1em;
+  }
 }
